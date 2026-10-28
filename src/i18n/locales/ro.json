@@ -1,0 +1,107 @@
+{
+  "app": {
+    "title": "Soplos Layout Switcher"
+  },
+  "hero": {
+    "title": "Soplos Layout Switcher",
+    "description": "Comută desktopul GNOME Shell între aspecte predefinite."
+  },
+  "common": {
+    "cancel": "Anulează",
+    "save": "Salvează",
+    "close": "Închide",
+    "ok": "OK"
+  },
+  "sidebar": {
+    "language": "Limbă",
+    "switchToLight": "Treci la tema luminoasă",
+    "switchToDark": "Treci la tema întunecată",
+    "aboutTooltip": "Despre Soplos Layout Switcher"
+  },
+  "about": {
+    "version": "Versiunea {version}",
+    "tagline": "Comută desktopul GNOME Shell între aspecte predefinite.",
+    "copyright": "Copyright © 2026 Sergi Perich",
+    "license": "Licență GPL-3.0-or-later",
+    "website": "soplos.org"
+  },
+  "environment": {
+    "gnome": "GNOME Shell",
+    "unknown": "Necunoscut",
+    "x11": "X11",
+    "wayland": "Wayland"
+  },
+  "tabs": {
+    "layout": "Aspect",
+    "settings": "Setări"
+  },
+  "layouts": {
+    "soplos": "Soplos",
+    "dock": "Dock",
+    "tiling": "Mozaic",
+    "gnome": "GNOME",
+    "apply": "Aplică",
+    "reload": "Reîncarcă desktopul",
+    "save": "Salvează aspectul curent",
+    "saveTitle": "Salvează aspectul curent",
+    "saveBody": "Salvează extensiile active acum, setările lor și butoanele ferestrelor, ca un aspect al tău pe care îl poți aplica din nou.",
+    "nameLabel": "Nume",
+    "delete": "Șterge",
+    "deleteTitle": "Șterge aspectul",
+    "deleteBody": "Ștergi aspectul {name}? Nu se poate anula.",
+    "replace": "Înlocuiește",
+    "replaceTitle": "Înlocuiește aspectul",
+    "replaceBody": "Există deja un aspect numit {name}. Îl înlocuiești cu desktopul așa cum este acum?"
+  },
+  "settings": {
+    "tray": "Zonă de notificare",
+    "desktopIcons": "Pictograme desktop",
+    "open": "Deschide",
+    "tweaks": "GNOME Tweaks",
+    "refine": "Refine",
+    "extensions": "Extensii GNOME",
+    "gdm": "Setări GDM",
+    "accent": "Culori de accent",
+    "firefox": "Temă Firefox"
+  },
+  "steps": {
+    "ensuring": "Se verifică extensiile de care are nevoie aspectul.",
+    "installingPackages": "Se instalează pachetele: {arg}.",
+    "installing": "Se instalează {arg}.",
+    "packagesFailed": "Pachetele nu au putut fi instalate.",
+    "installedBundled": "Extensia {arg} a fost instalată din cea livrată cu programul.",
+    "downloaded": "Extensia {arg} a fost descărcată de pe extensions.gnome.org.",
+    "noBuild": "extensions.gnome.org nu are o versiune a {arg} pentru această versiune a shell-ului.",
+    "manual": "Aceste extensii trebuie instalate manual: {arg}. Se deschide managerul de extensii.",
+    "applying": "Se aplică aspectul {arg}.",
+    "settingFailed": "Setarea {arg} nu a putut fi schimbată.",
+    "disabled": "Extensia {arg} a fost dezactivată.",
+    "enabled": "Extensia {arg} a fost activată.",
+    "enableFailed": "Extensia {arg} nu a putut fi activată încă. Reîncarcă desktopul ca shell-ul să o găsească.",
+    "applied": "Aspectul {arg} a fost aplicat.",
+    "saveFailed": "Aspectul ales nu a putut fi salvat.",
+    "loggingOut": "Se închide sesiunea pentru a reîncărca desktopul.",
+    "restartingShell": "Se repornește GNOME Shell.",
+    "missing": "Lipsește programul {arg}.",
+    "notInstalled": "Aplicația {arg} nu este instalată.",
+    "installingFlatpak": "Se instalează {arg} din Flathub.",
+    "flatpakFailed": "{arg} nu a putut fi instalat.",
+    "tooBig": "Setările extensiilor sunt prea mari pentru a fi salvate."
+  },
+  "errors": {
+    "title": "Nu s-a putut finaliza",
+    "apply": "Aspectul nu a putut fi aplicat.",
+    "reload": "Desktopul nu a putut fi reîncărcat.",
+    "tool": "Instrumentul nu a putut fi deschis.",
+    "switch": "Extensia nu a putut fi schimbată.",
+    "save": "Aspectul nu a putut fi salvat.",
+    "name": "Numele poate avea litere, cifre, spații și . , _ - până la 40 de caractere.",
+    "delete": "Aspectul nu a putut fi șters."
+  },
+  "notices": {
+    "title": "Notificare",
+    "applied": "Aspectul {name} este aplicat. Dacă desktopul nu arată încă bine, folosește Reîncarcă desktopul.",
+    "appliedNotes": "Aspectul {name} este aplicat, dar unele lucruri necesită atenția ta.",
+    "saved": "Aspectul {name} a fost salvat. Acum este în listă."
+  }
+}

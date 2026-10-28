@@ -1,0 +1,107 @@
+{
+  "app": {
+    "title": "Soplos Layout Switcher"
+  },
+  "hero": {
+    "title": "Soplos Layout Switcher",
+    "description": "Wechselt den GNOME-Shell-Desktop zwischen vordefinierten Layouts."
+  },
+  "common": {
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "close": "Schließen",
+    "ok": "OK"
+  },
+  "sidebar": {
+    "language": "Sprache",
+    "switchToLight": "Zum hellen Theme wechseln",
+    "switchToDark": "Zum dunklen Theme wechseln",
+    "aboutTooltip": "Über Soplos Layout Switcher"
+  },
+  "about": {
+    "version": "Version {version}",
+    "tagline": "Wechselt den GNOME-Shell-Desktop zwischen vordefinierten Layouts.",
+    "copyright": "Copyright © 2026 Sergi Perich",
+    "license": "Lizenz GPL-3.0-or-later",
+    "website": "soplos.org"
+  },
+  "environment": {
+    "gnome": "GNOME Shell",
+    "unknown": "Unbekannt",
+    "x11": "X11",
+    "wayland": "Wayland"
+  },
+  "tabs": {
+    "layout": "Layout",
+    "settings": "Einstellungen"
+  },
+  "layouts": {
+    "soplos": "Soplos",
+    "dock": "Dock",
+    "tiling": "Kachelung",
+    "gnome": "GNOME",
+    "apply": "Anwenden",
+    "reload": "Desktop neu laden",
+    "save": "Aktuelles Layout speichern",
+    "saveTitle": "Das aktuelle Layout speichern",
+    "saveBody": "Speichert die jetzt eingeschalteten Erweiterungen, ihre Einstellungen und die Fensterknöpfe als eigenes Layout, das Sie erneut anwenden können.",
+    "nameLabel": "Name",
+    "delete": "Löschen",
+    "deleteTitle": "Layout löschen",
+    "deleteBody": "Das Layout {name} löschen? Das kann nicht rückgängig gemacht werden.",
+    "replace": "Ersetzen",
+    "replaceTitle": "Layout ersetzen",
+    "replaceBody": "Ein Layout namens {name} gibt es schon. Durch den Desktop in seinem jetzigen Zustand ersetzen?"
+  },
+  "settings": {
+    "tray": "Benachrichtigungsfeld",
+    "desktopIcons": "Desktop-Symbole",
+    "open": "Öffnen",
+    "tweaks": "GNOME Tweaks",
+    "refine": "Refine",
+    "extensions": "GNOME-Erweiterungen",
+    "gdm": "GDM-Einstellungen",
+    "accent": "Akzentfarben",
+    "firefox": "Firefox-Thema"
+  },
+  "steps": {
+    "ensuring": "Die vom Layout benötigten Erweiterungen werden geprüft.",
+    "installingPackages": "Pakete werden installiert: {arg}.",
+    "installing": "{arg} wird installiert.",
+    "packagesFailed": "Die Pakete konnten nicht installiert werden.",
+    "installedBundled": "Erweiterung {arg} aus der mitgelieferten Version installiert.",
+    "downloaded": "Erweiterung {arg} von extensions.gnome.org heruntergeladen.",
+    "noBuild": "extensions.gnome.org hat keine Version von {arg} für diese Version der Shell.",
+    "manual": "Diese Erweiterungen müssen von Hand installiert werden: {arg}. Die Erweiterungsverwaltung wird geöffnet.",
+    "applying": "Das Layout {arg} wird angewendet.",
+    "settingFailed": "Die Einstellung {arg} konnte nicht geändert werden.",
+    "disabled": "Erweiterung {arg} ausgeschaltet.",
+    "enabled": "Erweiterung {arg} eingeschaltet.",
+    "enableFailed": "Die Erweiterung {arg} konnte noch nicht eingeschaltet werden. Laden Sie den Desktop neu, damit die Shell sie findet.",
+    "applied": "Layout {arg} angewendet.",
+    "saveFailed": "Das gewählte Layout konnte nicht gespeichert werden.",
+    "loggingOut": "Die Sitzung wird beendet, um den Desktop neu zu laden.",
+    "restartingShell": "GNOME Shell wird neu gestartet.",
+    "missing": "Das Programm {arg} fehlt.",
+    "notInstalled": "Die Anwendung {arg} ist nicht installiert.",
+    "installingFlatpak": "{arg} wird von Flathub installiert.",
+    "flatpakFailed": "{arg} konnte nicht installiert werden.",
+    "tooBig": "Die Einstellungen der Erweiterungen sind zu groß zum Speichern."
+  },
+  "errors": {
+    "title": "Nicht abgeschlossen",
+    "apply": "Das Layout konnte nicht angewendet werden.",
+    "reload": "Der Desktop konnte nicht neu geladen werden.",
+    "tool": "Das Werkzeug konnte nicht geöffnet werden.",
+    "switch": "Die Erweiterung konnte nicht geändert werden.",
+    "save": "Das Layout konnte nicht gespeichert werden.",
+    "name": "Der Name darf Buchstaben, Ziffern, Leerzeichen und . , _ - enthalten, bis zu 40 Zeichen.",
+    "delete": "Das Layout konnte nicht gelöscht werden."
+  },
+  "notices": {
+    "title": "Hinweis",
+    "applied": "Das Layout {name} ist angewendet. Wenn der Desktop noch nicht richtig aussieht, verwenden Sie Desktop neu laden.",
+    "appliedNotes": "Das Layout {name} ist angewendet, aber einiges braucht Ihre Aufmerksamkeit.",
+    "saved": "Das Layout {name} ist gespeichert. Es steht jetzt in der Liste."
+  }
+}

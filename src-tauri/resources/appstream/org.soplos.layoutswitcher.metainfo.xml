@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.soplos.layoutswitcher</id>
+  <pkgname>soplos-layout-switcher</pkgname>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <project_group>org.soplos</project_group>
+
+  <name>Soplos Layout Switcher</name>
+
+  <summary>Switch between predefined GNOME Shell layouts on Soplos Linux</summary>
+  <summary xml:lang="es">Cambia entre diseños predefinidos de GNOME Shell en Soplos Linux</summary>
+  <summary xml:lang="fr">Basculez entre des dispositions GNOME Shell prédéfinies sur Soplos Linux</summary>
+  <summary xml:lang="de">Wechseln Sie zwischen vordefinierten GNOME-Shell-Layouts auf Soplos Linux</summary>
+  <summary xml:lang="pt">Alterne entre layouts predefinidos do GNOME Shell no Soplos Linux</summary>
+  <summary xml:lang="it">Passa tra layout predefiniti di GNOME Shell su Soplos Linux</summary>
+  <summary xml:lang="ro">Comută între aspecte predefinite ale GNOME Shell pe Soplos Linux</summary>
+  <summary xml:lang="ru">Переключение между предустановленными макетами GNOME Shell в Soplos Linux</summary>
+
+  <description>
+    <p>Soplos Layout Switcher lets you switch the GNOME Shell desktop between predefined layouts (Soplos, Dock, Tiling, GNOME) by enabling and disabling the required shell extensions and applying the matching settings.</p>
+    <p xml:lang="es">Soplos Layout Switcher permite cambiar el escritorio de GNOME Shell entre diseños predefinidos (Soplos, Dock, Mosaico, GNOME), activando y desactivando las extensiones necesarias y aplicando los ajustes correspondientes.</p>
+    <p xml:lang="fr">Soplos Layout Switcher permet de basculer le bureau GNOME Shell entre des dispositions prédéfinies (Soplos, Dock, Mosaïque, GNOME), en activant et désactivant les extensions nécessaires et en appliquant les paramètres correspondants.</p>
+    <p xml:lang="de">Mit Soplos Layout Switcher können Sie den GNOME-Shell-Desktop zwischen vordefinierten Layouts (Soplos, Dock, Kachelung, GNOME) wechseln, indem die erforderlichen Shell-Erweiterungen aktiviert/deaktiviert und die passenden Einstellungen angewendet werden.</p>
+    <p xml:lang="pt">O Soplos Layout Switcher permite alternar a área de trabalho do GNOME Shell entre layouts predefinidos (Soplos, Dock, Mosaico, GNOME), ativando e desativando as extensões necessárias e aplicando as configurações correspondentes.</p>
+    <p xml:lang="it">Soplos Layout Switcher consente di cambiare il desktop di GNOME Shell tra layout predefiniti (Soplos, Dock, Mosaico, GNOME), abilitando e disabilitando le estensioni necessarie e applicando le impostazioni corrispondenti.</p>
+    <p xml:lang="ro">Soplos Layout Switcher vă permite să comutați desktopul GNOME Shell între aspecte predefinite (Soplos, Dock, Mozaic, GNOME), activând și dezactivând extensiile necesare și aplicând setările corespunzătoare.</p>
+    <p xml:lang="ru">Soplos Layout Switcher позволяет переключать рабочий стол GNOME Shell между предустановленными макетами (Soplos, Dock, Плитка, GNOME), включая и отключая необходимые расширения оболочки и применяя соответствующие настройки.</p>
+    <ul>
+      <li>Four layout presets: Soplos, Dock, Tiling and GNOME</li>
+      <li xml:lang="es">Cuatro diseños predefinidos: Soplos, Dock, Mosaico y GNOME</li>
+      <li xml:lang="fr">Quatre dispositions prédéfinies : Soplos, Dock, Mosaïque et GNOME</li>
+      <li xml:lang="de">Vier vordefinierte Layouts: Soplos, Dock, Kachelung und GNOME</li>
+      <li xml:lang="pt">Quatro layouts predefinidos: Soplos, Dock, Mosaico e GNOME</li>
+      <li xml:lang="it">Quattro layout predefiniti: Soplos, Dock, Mosaico e GNOME</li>
+      <li xml:lang="ro">Patru aspecte predefinite: Soplos, Dock, Mozaic și GNOME</li>
+      <li xml:lang="ru">Четыре предустановленных макета: Soplos, Dock, Плитка и GNOME</li>
+      <li>Quick access to GNOME Tweaks, GNOME Extensions, GDM Settings and Firefox theming</li>
+      <li xml:lang="es">Acceso rápido a GNOME Tweaks, GNOME Extensions, ajustes de GDM y tema de Firefox</li>
+      <li xml:lang="fr">Accès rapide à GNOME Tweaks, GNOME Extensions, paramètres GDM et thème Firefox</li>
+      <li xml:lang="de">Schnellzugriff auf GNOME Tweaks, GNOME-Erweiterungen, GDM-Einstellungen und Firefox-Thema</li>
+      <li xml:lang="pt">Acesso rápido ao GNOME Tweaks, GNOME Extensions, configurações do GDM e tema do Firefox</li>
+      <li xml:lang="it">Accesso rapido a GNOME Tweaks, GNOME Extensions, impostazioni GDM e tema di Firefox</li>
+      <li xml:lang="ro">Acces rapid la GNOME Tweaks, GNOME Extensions, setări GDM și temă Firefox</li>
+      <li xml:lang="ru">Быстрый доступ к GNOME Tweaks, GNOME Extensions, настройкам GDM и теме Firefox</li>
+      <li>Multi-language support (ES, EN, FR, PT, DE, IT, RU, RO)</li>
+      <li xml:lang="es">Soporte multiidioma (ES, EN, FR, PT, DE, IT, RU, RO)</li>
+      <li xml:lang="fr">Support multilingue (ES, EN, FR, PT, DE, IT, RU, RO)</li>
+      <li xml:lang="de">Mehrsprachige Unterstützung (ES, EN, FR, PT, DE, IT, RU, RO)</li>
+      <li xml:lang="pt">Suporte multilíngue (ES, EN, FR, PT, DE, IT, RU, RO)</li>
+      <li xml:lang="it">Supporto multilingue (ES, EN, FR, PT, DE, IT, RU, RO)</li>
+      <li xml:lang="ro">Suport multilingv (ES, EN, FR, PT, DE, IT, RU, RO)</li>
+      <li xml:lang="ru">Многоязычная поддержка (ES, EN, FR, PT, DE, IT, RU, RO)</li>
+    </ul>
+  </description>
+
+  <categories>
+    <category>Settings</category>
+    <category>System</category>
+    <category>Utility</category>
+  </categories>
+
+  <keywords>
+    <keyword>gnome</keyword>
+    <keyword>layout</keyword>
+    <keyword>shell</keyword>
+    <keyword>extensions</keyword>
+    <keyword>soplos</keyword>
+    <keyword>dock</keyword>
+    <keyword>panel</keyword>
+    <keyword xml:lang="es">diseño</keyword>
+    <keyword xml:lang="es">extensiones</keyword>
+    <keyword xml:lang="es">escritorio</keyword>
+  </keywords>
+
+  <launchable type="desktop-id">org.soplos.layoutswitcher.desktop</launchable>
+
+  <provides>
+    <binary>soplos-layout-switcher</binary>
+    <binary>soplos-layout-switcher-cli</binary>
+  </provides>
+
+  <url type="homepage">https://soplos.org</url>
+  <url type="bugtracker">https://github.com/SoplosLinux/soplos-layout-switcher-3.0/issues</url>
+  <url type="donation">https://paypal.me/soploslinux</url>
+  <url type="contact">https://soplos.org/wiki/contact/</url>
+
+  <developer id="org.soplos">
+    <name>Sergi Perich</name>
+    <url type="homepage">https://soplos.org</url>
+  </developer>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/SoplosLinux/soplos-layout-switcher-3.0/main/src-tauri/resources/screenshots/screenshot01.png</image>
+      <caption>The four layouts, one chosen, with Apply and Reload Desktop</caption>
+      <caption xml:lang="es">Los cuatro diseños, uno elegido, con Aplicar y Recargar escritorio</caption>
+      <caption xml:lang="fr">Les quatre dispositions, une choisie, avec Appliquer et Recharger le bureau</caption>
+      <caption xml:lang="de">Die vier Layouts, eines ausgewählt, mit Anwenden und Desktop neu laden</caption>
+      <caption xml:lang="pt">Os quatro desenhos, um escolhido, com Aplicar e Recarregar ambiente de trabalho</caption>
+      <caption xml:lang="it">I quattro layout, uno scelto, con Applica e Ricarica desktop</caption>
+      <caption xml:lang="ro">Cele patru aspecte, unul ales, cu Aplică și Reîncarcă desktopul</caption>
+      <caption xml:lang="ru">Четыре раскладки, одна выбрана, с кнопками Применить и Перезагрузить рабочий стол</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/SoplosLinux/soplos-layout-switcher-3.0/main/src-tauri/resources/screenshots/screenshot02.png</image>
+      <caption>Settings: the switches and the tools of the desktop</caption>
+      <caption xml:lang="es">Ajustes: los interruptores y las herramientas del escritorio</caption>
+      <caption xml:lang="fr">Paramètres : les interrupteurs et les outils du bureau</caption>
+      <caption xml:lang="de">Einstellungen: die Schalter und die Werkzeuge des Desktops</caption>
+      <caption xml:lang="pt">Definições: os interruptores e as ferramentas do ambiente de trabalho</caption>
+      <caption xml:lang="it">Impostazioni: gli interruttori e gli strumenti del desktop</caption>
+      <caption xml:lang="ro">Setări: comutatoarele și instrumentele desktopului</caption>
+      <caption xml:lang="ru">Настройки: переключатели и инструменты рабочего стола</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/SoplosLinux/soplos-layout-switcher-3.0/main/src-tauri/resources/screenshots/screenshot03.png</image>
+      <caption>Saving the desktop as it is now as a layout of your own</caption>
+      <caption xml:lang="es">Guardar el escritorio tal como está ahora como un diseño propio</caption>
+      <caption xml:lang="fr">Enregistrer le bureau tel qu'il est maintenant comme disposition personnelle</caption>
+      <caption xml:lang="de">Den Desktop, wie er jetzt ist, als eigenes Layout speichern</caption>
+      <caption xml:lang="pt">Guardar o ambiente de trabalho como está agora como um desenho próprio</caption>
+      <caption xml:lang="it">Salvare il desktop com'è ora come layout personale</caption>
+      <caption xml:lang="ro">Salvarea desktopului așa cum este acum ca aspect propriu</caption>
+      <caption xml:lang="ru">Сохранение рабочего стола в его текущем виде как собственной раскладки</caption>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="3.0.0-alpha" date="2026-10-28">
+      <description>
+        <p>First alpha of the rewrite of Soplos Layout Switcher, from Python 3 and GTK3 to Tauri 2 with a Rust backend and a Svelte frontend. The four layouts, the Settings page and the command line are those of the 2.x program. It has not yet been tested on real hardware.</p>
+      </description>
+    </release>
+  </releases>
+
+  <content_rating type="oars-1.1" />
+</component>

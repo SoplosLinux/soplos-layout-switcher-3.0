@@ -1,0 +1,107 @@
+{
+  "app": {
+    "title": "Soplos Layout Switcher"
+  },
+  "hero": {
+    "title": "Soplos Layout Switcher",
+    "description": "Bascule le bureau GNOME Shell entre des dispositions prédéfinies."
+  },
+  "common": {
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "close": "Fermer",
+    "ok": "OK"
+  },
+  "sidebar": {
+    "language": "Langue",
+    "switchToLight": "Passer au thème clair",
+    "switchToDark": "Passer au thème sombre",
+    "aboutTooltip": "À propos de Soplos Layout Switcher"
+  },
+  "about": {
+    "version": "Version {version}",
+    "tagline": "Bascule le bureau GNOME Shell entre des dispositions prédéfinies.",
+    "copyright": "Copyright © 2026 Sergi Perich",
+    "license": "Licence GPL-3.0-or-later",
+    "website": "soplos.org"
+  },
+  "environment": {
+    "gnome": "GNOME Shell",
+    "unknown": "Inconnu",
+    "x11": "X11",
+    "wayland": "Wayland"
+  },
+  "tabs": {
+    "layout": "Disposition",
+    "settings": "Paramètres"
+  },
+  "layouts": {
+    "soplos": "Soplos",
+    "dock": "Dock",
+    "tiling": "Mosaïque",
+    "gnome": "GNOME",
+    "apply": "Appliquer",
+    "reload": "Recharger le bureau",
+    "save": "Enregistrer la disposition actuelle",
+    "saveTitle": "Enregistrer la disposition actuelle",
+    "saveBody": "Enregistre les extensions activées en ce moment, leurs réglages et les boutons des fenêtres, comme une disposition à vous que vous pouvez appliquer de nouveau.",
+    "nameLabel": "Nom",
+    "delete": "Supprimer",
+    "deleteTitle": "Supprimer la disposition",
+    "deleteBody": "Supprimer la disposition {name} ? Cette action est irréversible.",
+    "replace": "Remplacer",
+    "replaceTitle": "Remplacer la disposition",
+    "replaceBody": "Une disposition nommée {name} existe déjà. La remplacer par le bureau tel qu'il est maintenant ?"
+  },
+  "settings": {
+    "tray": "Zone de notification",
+    "desktopIcons": "Icônes du bureau",
+    "open": "Ouvrir",
+    "tweaks": "GNOME Tweaks",
+    "refine": "Refine",
+    "extensions": "Extensions GNOME",
+    "gdm": "Paramètres GDM",
+    "accent": "Couleurs d'accentuation",
+    "firefox": "Thème Firefox"
+  },
+  "steps": {
+    "ensuring": "Vérification des extensions dont la disposition a besoin.",
+    "installingPackages": "Installation des paquets : {arg}.",
+    "installing": "Installation de {arg}.",
+    "packagesFailed": "Les paquets n'ont pas pu être installés.",
+    "installedBundled": "Extension {arg} installée à partir de celle fournie avec le programme.",
+    "downloaded": "Extension {arg} téléchargée depuis extensions.gnome.org.",
+    "noBuild": "extensions.gnome.org n'a pas de version de {arg} pour cette version du shell.",
+    "manual": "Ces extensions doivent être installées à la main : {arg}. Le gestionnaire d'extensions s'ouvre.",
+    "applying": "Application de la disposition {arg}.",
+    "settingFailed": "Le réglage {arg} n'a pas pu être modifié.",
+    "disabled": "Extension {arg} désactivée.",
+    "enabled": "Extension {arg} activée.",
+    "enableFailed": "L'extension {arg} n'a pas encore pu être activée. Rechargez le bureau pour que le shell la trouve.",
+    "applied": "Disposition {arg} appliquée.",
+    "saveFailed": "La disposition choisie n'a pas pu être enregistrée.",
+    "loggingOut": "Fermeture de la session pour recharger le bureau.",
+    "restartingShell": "Redémarrage de GNOME Shell.",
+    "missing": "Le programme {arg} est absent.",
+    "notInstalled": "L'application {arg} n'est pas installée.",
+    "installingFlatpak": "Installation de {arg} depuis Flathub.",
+    "flatpakFailed": "{arg} n'a pas pu être installé.",
+    "tooBig": "Les réglages des extensions sont trop volumineux pour être enregistrés."
+  },
+  "errors": {
+    "title": "Opération impossible",
+    "apply": "Impossible d'appliquer la disposition.",
+    "reload": "Impossible de recharger le bureau.",
+    "tool": "Impossible d'ouvrir l'outil.",
+    "switch": "Impossible de modifier l'extension.",
+    "save": "Impossible d'enregistrer la disposition.",
+    "name": "Le nom peut contenir des lettres, des chiffres, des espaces et . , _ - jusqu'à 40 caractères.",
+    "delete": "Impossible de supprimer la disposition."
+  },
+  "notices": {
+    "title": "Avis",
+    "applied": "La disposition {name} est appliquée. Si le bureau n'est pas encore correct, utilisez Recharger le bureau.",
+    "appliedNotes": "La disposition {name} est appliquée, mais certains points demandent votre attention.",
+    "saved": "La disposition {name} est enregistrée. Elle est maintenant dans la liste."
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "app": {
+    "title": "Soplos Layout Switcher"
+  },
+  "hero": {
+    "title": "Soplos Layout Switcher",
+    "description": "Cambia el escritorio de GNOME Shell entre diseños predefinidos."
+  },
+  "common": {
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "close": "Cerrar",
+    "ok": "Aceptar"
+  },
+  "sidebar": {
+    "language": "Idioma",
+    "switchToLight": "Cambiar al tema claro",
+    "switchToDark": "Cambiar al tema oscuro",
+    "aboutTooltip": "Acerca de Soplos Layout Switcher"
+  },
+  "about": {
+    "version": "Versión {version}",
+    "tagline": "Cambia el escritorio de GNOME Shell entre diseños predefinidos.",
+    "copyright": "Copyright © 2026 Sergi Perich",
+    "license": "Licencia GPL-3.0-or-later",
+    "website": "soplos.org"
+  },
+  "environment": {
+    "gnome": "GNOME Shell",
+    "unknown": "Desconocido",
+    "x11": "X11",
+    "wayland": "Wayland"
+  },
+  "tabs": {
+    "layout": "Diseño",
+    "settings": "Ajustes"
+  },
+  "layouts": {
+    "soplos": "Soplos",
+    "dock": "Dock",
+    "tiling": "Mosaico",
+    "gnome": "GNOME",
+    "apply": "Aplicar",
+    "reload": "Recargar escritorio",
+    "save": "Guardar diseño actual",
+    "saveTitle": "Guardar el diseño actual",
+    "saveBody": "Guarda las extensiones que están activas ahora, sus ajustes y los botones de las ventanas, como un diseño tuyo que puedes volver a aplicar.",
+    "nameLabel": "Nombre",
+    "delete": "Eliminar",
+    "deleteTitle": "Eliminar diseño",
+    "deleteBody": "¿Eliminar el diseño {name}? No se puede deshacer.",
+    "replace": "Reemplazar",
+    "replaceTitle": "Reemplazar diseño",
+    "replaceBody": "Ya existe un diseño llamado {name}. ¿Reemplazarlo por el escritorio tal como está ahora?"
+  },
+  "settings": {
+    "tray": "Bandeja del sistema",
+    "desktopIcons": "Iconos de escritorio",
+    "open": "Abrir",
+    "tweaks": "GNOME Tweaks",
+    "refine": "Refine",
+    "extensions": "Extensiones de GNOME",
+    "gdm": "Ajustes de GDM",
+    "accent": "Colores de acento",
+    "firefox": "Tema de Firefox"
+  },
+  "steps": {
+    "ensuring": "Comprobando las extensiones que necesita el diseño.",
+    "installingPackages": "Instalando los paquetes: {arg}.",
+    "installing": "Instalando {arg}.",
+    "packagesFailed": "No se han podido instalar los paquetes.",
+    "installedBundled": "Extensión {arg} instalada desde la que trae el programa.",
+    "downloaded": "Extensión {arg} descargada de extensions.gnome.org.",
+    "noBuild": "extensions.gnome.org no tiene una versión de {arg} para esta versión del shell.",
+    "manual": "Estas extensiones hay que instalarlas a mano: {arg}. Se está abriendo el gestor de extensiones.",
+    "applying": "Aplicando el diseño {arg}.",
+    "settingFailed": "No se ha podido cambiar el ajuste {arg}.",
+    "disabled": "Extensión {arg} desactivada.",
+    "enabled": "Extensión {arg} activada.",
+    "enableFailed": "La extensión {arg} todavía no se ha podido activar. Recarga el escritorio para que el shell la encuentre.",
+    "applied": "Diseño {arg} aplicado.",
+    "saveFailed": "No se ha podido guardar el diseño elegido.",
+    "loggingOut": "Cerrando la sesión para recargar el escritorio.",
+    "restartingShell": "Reiniciando GNOME Shell.",
+    "missing": "Falta el programa {arg}.",
+    "notInstalled": "La aplicación {arg} no está instalada.",
+    "installingFlatpak": "Instalando {arg} desde Flathub.",
+    "flatpakFailed": "No se ha podido instalar {arg}.",
+    "tooBig": "Los ajustes de las extensiones son demasiado grandes para guardarlos."
+  },
+  "errors": {
+    "title": "No se ha podido completar",
+    "apply": "No se ha podido aplicar el diseño.",
+    "reload": "No se ha podido recargar el escritorio.",
+    "tool": "No se ha podido abrir la herramienta.",
+    "switch": "No se ha podido cambiar la extensión.",
+    "save": "No se ha podido guardar el diseño.",
+    "name": "El nombre puede llevar letras, números, espacios y . , _ - hasta 40 caracteres.",
+    "delete": "No se ha podido eliminar el diseño."
+  },
+  "notices": {
+    "title": "Aviso",
+    "applied": "El diseño {name} está aplicado. Si el escritorio todavía no se ve bien, usa Recargar escritorio.",
+    "appliedNotes": "El diseño {name} está aplicado, pero hay cosas que requieren tu atención.",
+    "saved": "El diseño {name} está guardado. Ya está en la lista."
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "soplos-layout-switcher",
+  "version": "3.0.0-alpha",
+  "identifier": "org.soplos.layoutswitcher",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "http://localhost:1428",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Soplos Layout Switcher",
+        "width": 700,
+        "height": 700,
+        "minWidth": 650,
+        "minHeight": 550,
+        "resizable": true,
+        "dragDropEnabled": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["deb"],
+    "publisher": "Sergi Perich",
+    "homepage": "https://soplos.org",
+    "copyright": "Copyright © 2026 Sergi Perich",
+    "license": "GPL-3.0-or-later",
+    "licenseFile": "../LICENSE",
+    "category": "Utility",
+    "shortDescription": "GNOME Shell layout presets for Soplos Linux",
+    "longDescription": "Switches the GNOME Shell desktop between predefined layouts (Soplos, Dock, Tiling and GNOME) by turning the shell extensions each one needs on and off and applying the matching settings.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.png"
+    ],
+    "linux": {
+      "deb": {
+        "section": "gnome",
+        "priority": "optional",
+        "depends": [
+          "gnome-shell",
+          "pkexec",
+          "curl",
+          "dconf-cli"
+        ],
+        "recommends": [
+          "gnome-shell-extension-dashtodock",
+          "gnome-shell-extension-dash-to-panel",
+          "gnome-shell-extension-arc-menu",
+          "gnome-shell-extension-appindicator",
+          "gnome-shell-extension-desktop-icons-ng",
+          "gnome-tweaks",
+          "flatpak"
+        ],
+        "changelog": "../CHANGELOG.md",
+        "desktopTemplate": "resources/debian/soplos-layout-switcher.desktop.hbs",
+        "files": {
+          "/usr/share/metainfo/org.soplos.layoutswitcher.metainfo.xml": "resources/appstream/org.soplos.layoutswitcher.metainfo.xml",
+          "/usr/share/doc/soplos-layout-switcher/copyright": "resources/debian/copyright",
+          "/usr/share/polkit-1/actions/org.soplos.layoutswitcher.policy": "resources/polkit/org.soplos.layoutswitcher.policy",
+          "/usr/share/man/man1/soplos-layout-switcher.1.gz": "resources/docs/soplos-layout-switcher.1.gz",
+          "/usr/bin/soplos-layout-switcher-cli": "resources/bin/soplos-layout-switcher-cli",
+          "/usr/share/soplos-layout-switcher/extensions": "../data/extensions"
+        }
+      }
+    }
+  }
+}

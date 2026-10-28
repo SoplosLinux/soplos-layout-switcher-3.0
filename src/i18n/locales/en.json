@@ -1,0 +1,107 @@
+{
+  "app": {
+    "title": "Soplos Layout Switcher"
+  },
+  "hero": {
+    "title": "Soplos Layout Switcher",
+    "description": "Switches the GNOME Shell desktop between predefined layouts."
+  },
+  "common": {
+    "cancel": "Cancel",
+    "save": "Save",
+    "close": "Close",
+    "ok": "OK"
+  },
+  "sidebar": {
+    "language": "Language",
+    "switchToLight": "Switch to the light theme",
+    "switchToDark": "Switch to the dark theme",
+    "aboutTooltip": "About Soplos Layout Switcher"
+  },
+  "about": {
+    "version": "Version {version}",
+    "tagline": "Switches the GNOME Shell desktop between predefined layouts.",
+    "copyright": "Copyright © 2026 Sergi Perich",
+    "license": "License GPL-3.0-or-later",
+    "website": "soplos.org"
+  },
+  "environment": {
+    "gnome": "GNOME Shell",
+    "unknown": "Unknown",
+    "x11": "X11",
+    "wayland": "Wayland"
+  },
+  "tabs": {
+    "layout": "Layout",
+    "settings": "Settings"
+  },
+  "layouts": {
+    "soplos": "Soplos",
+    "dock": "Dock",
+    "tiling": "Tiling",
+    "gnome": "GNOME",
+    "apply": "Apply",
+    "reload": "Reload Desktop",
+    "save": "Save current layout",
+    "saveTitle": "Save the current layout",
+    "saveBody": "It saves the extensions that are on now, their settings and the window buttons, as a layout of your own that you can apply again.",
+    "nameLabel": "Name",
+    "delete": "Delete",
+    "deleteTitle": "Delete layout",
+    "deleteBody": "Delete the layout {name}? This cannot be undone.",
+    "replace": "Replace",
+    "replaceTitle": "Replace layout",
+    "replaceBody": "A layout called {name} already exists. Replace it with the desktop as it is now?"
+  },
+  "settings": {
+    "tray": "System tray",
+    "desktopIcons": "Desktop icons",
+    "open": "Open",
+    "tweaks": "GNOME Tweaks",
+    "refine": "Refine",
+    "extensions": "GNOME Extensions",
+    "gdm": "GDM Settings",
+    "accent": "Accent Colors",
+    "firefox": "Firefox Theme"
+  },
+  "steps": {
+    "ensuring": "Checking the extensions the layout needs.",
+    "installingPackages": "Installing the packages: {arg}.",
+    "installing": "Installing {arg}.",
+    "packagesFailed": "The packages could not be installed.",
+    "installedBundled": "Extension {arg} installed from the one that ships with the program.",
+    "downloaded": "Extension {arg} downloaded from extensions.gnome.org.",
+    "noBuild": "extensions.gnome.org has no build of {arg} for this version of the shell.",
+    "manual": "These extensions have to be installed by hand: {arg}. The extensions manager is opening.",
+    "applying": "Applying the layout {arg}.",
+    "settingFailed": "The setting {arg} could not be changed.",
+    "disabled": "Extension {arg} turned off.",
+    "enabled": "Extension {arg} turned on.",
+    "enableFailed": "Extension {arg} could not be turned on yet. Reload the desktop so the shell finds it.",
+    "applied": "Layout {arg} applied.",
+    "saveFailed": "The chosen layout could not be saved.",
+    "loggingOut": "Closing the session to reload the desktop.",
+    "restartingShell": "Restarting GNOME Shell.",
+    "missing": "The program {arg} is missing.",
+    "notInstalled": "The application {arg} is not installed.",
+    "installingFlatpak": "Installing {arg} from Flathub.",
+    "flatpakFailed": "{arg} could not be installed.",
+    "tooBig": "The settings of the extensions are too large to be saved."
+  },
+  "errors": {
+    "title": "Could not be completed",
+    "apply": "The layout could not be applied.",
+    "reload": "The desktop could not be reloaded.",
+    "tool": "The tool could not be opened.",
+    "switch": "The extension could not be changed.",
+    "save": "The layout could not be saved.",
+    "name": "The name can have letters, digits, spaces and . , _ - up to 40 characters.",
+    "delete": "The layout could not be deleted."
+  },
+  "notices": {
+    "title": "Notice",
+    "applied": "The layout {name} is applied. If the desktop does not look right yet, use Reload Desktop.",
+    "appliedNotes": "The layout {name} is applied, but some things need your attention.",
+    "saved": "The layout {name} is saved. It is now in the list."
+  }
+}

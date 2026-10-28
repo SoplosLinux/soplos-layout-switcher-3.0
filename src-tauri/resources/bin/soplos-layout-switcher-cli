@@ -1,0 +1,6 @@
+#!/bin/sh
+# Command line of Soplos Layout Switcher, for scripts and installers that need a
+# layout without opening the window:
+#   soplos-layout-switcher-cli apply-soplos | apply-dock | apply-gnome | apply-tiling
+#   soplos-layout-switcher-cli reload-gnome-shell
+exec /usr/bin/soplos-layout-switcher --cli "$@"

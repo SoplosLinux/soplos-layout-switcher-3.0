@@ -1,0 +1,107 @@
+{
+  "app": {
+    "title": "Soplos Layout Switcher"
+  },
+  "hero": {
+    "title": "Soplos Layout Switcher",
+    "description": "Cambia il desktop di GNOME Shell tra layout predefiniti."
+  },
+  "common": {
+    "cancel": "Annulla",
+    "save": "Salva",
+    "close": "Chiudi",
+    "ok": "OK"
+  },
+  "sidebar": {
+    "language": "Lingua",
+    "switchToLight": "Passa al tema chiaro",
+    "switchToDark": "Passa al tema scuro",
+    "aboutTooltip": "Informazioni su Soplos Layout Switcher"
+  },
+  "about": {
+    "version": "Versione {version}",
+    "tagline": "Cambia il desktop di GNOME Shell tra layout predefiniti.",
+    "copyright": "Copyright © 2026 Sergi Perich",
+    "license": "Licenza GPL-3.0-or-later",
+    "website": "soplos.org"
+  },
+  "environment": {
+    "gnome": "GNOME Shell",
+    "unknown": "Sconosciuto",
+    "x11": "X11",
+    "wayland": "Wayland"
+  },
+  "tabs": {
+    "layout": "Layout",
+    "settings": "Impostazioni"
+  },
+  "layouts": {
+    "soplos": "Soplos",
+    "dock": "Dock",
+    "tiling": "Mosaico",
+    "gnome": "GNOME",
+    "apply": "Applica",
+    "reload": "Ricarica desktop",
+    "save": "Salva il layout attuale",
+    "saveTitle": "Salva il layout attuale",
+    "saveBody": "Salva le estensioni attive adesso, le loro impostazioni e i pulsanti delle finestre, come un layout tuo che puoi applicare di nuovo.",
+    "nameLabel": "Nome",
+    "delete": "Elimina",
+    "deleteTitle": "Elimina layout",
+    "deleteBody": "Eliminare il layout {name}? L'azione non si può annullare.",
+    "replace": "Sostituisci",
+    "replaceTitle": "Sostituisci layout",
+    "replaceBody": "Esiste già un layout chiamato {name}. Sostituirlo con il desktop così com'è adesso?"
+  },
+  "settings": {
+    "tray": "Area di notifica",
+    "desktopIcons": "Icone del desktop",
+    "open": "Apri",
+    "tweaks": "GNOME Tweaks",
+    "refine": "Refine",
+    "extensions": "Estensioni GNOME",
+    "gdm": "Impostazioni GDM",
+    "accent": "Colori di accento",
+    "firefox": "Tema di Firefox"
+  },
+  "steps": {
+    "ensuring": "Controllo delle estensioni di cui il layout ha bisogno.",
+    "installingPackages": "Installazione dei pacchetti: {arg}.",
+    "installing": "Installazione di {arg}.",
+    "packagesFailed": "Non è stato possibile installare i pacchetti.",
+    "installedBundled": "Estensione {arg} installata da quella fornita con il programma.",
+    "downloaded": "Estensione {arg} scaricata da extensions.gnome.org.",
+    "noBuild": "extensions.gnome.org non ha una versione di {arg} per questa versione della shell.",
+    "manual": "Queste estensioni vanno installate a mano: {arg}. Si sta aprendo il gestore delle estensioni.",
+    "applying": "Applicazione del layout {arg}.",
+    "settingFailed": "Non è stato possibile cambiare l'impostazione {arg}.",
+    "disabled": "Estensione {arg} disattivata.",
+    "enabled": "Estensione {arg} attivata.",
+    "enableFailed": "L'estensione {arg} non è ancora stata attivata. Ricarica il desktop affinché la shell la trovi.",
+    "applied": "Layout {arg} applicato.",
+    "saveFailed": "Non è stato possibile salvare il layout scelto.",
+    "loggingOut": "Chiusura della sessione per ricaricare il desktop.",
+    "restartingShell": "Riavvio di GNOME Shell.",
+    "missing": "Manca il programma {arg}.",
+    "notInstalled": "L'applicazione {arg} non è installata.",
+    "installingFlatpak": "Installazione di {arg} da Flathub.",
+    "flatpakFailed": "Non è stato possibile installare {arg}.",
+    "tooBig": "Le impostazioni delle estensioni sono troppo grandi per essere salvate."
+  },
+  "errors": {
+    "title": "Operazione non completata",
+    "apply": "Non è stato possibile applicare il layout.",
+    "reload": "Non è stato possibile ricaricare il desktop.",
+    "tool": "Non è stato possibile aprire lo strumento.",
+    "switch": "Non è stato possibile cambiare l'estensione.",
+    "save": "Non è stato possibile salvare il layout.",
+    "name": "Il nome può contenere lettere, cifre, spazi e . , _ - fino a 40 caratteri.",
+    "delete": "Non è stato possibile eliminare il layout."
+  },
+  "notices": {
+    "title": "Avviso",
+    "applied": "Il layout {name} è applicato. Se il desktop non appare ancora corretto, usa Ricarica desktop.",
+    "appliedNotes": "Il layout {name} è applicato, ma alcune cose richiedono la tua attenzione.",
+    "saved": "Il layout {name} è salvato. Ora è nell'elenco."
+  }
+}

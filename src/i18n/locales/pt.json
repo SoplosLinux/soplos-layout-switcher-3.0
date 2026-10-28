@@ -1,0 +1,107 @@
+{
+  "app": {
+    "title": "Soplos Layout Switcher"
+  },
+  "hero": {
+    "title": "Soplos Layout Switcher",
+    "description": "Alterna a área de trabalho do GNOME Shell entre layouts predefinidos."
+  },
+  "common": {
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "close": "Fechar",
+    "ok": "OK"
+  },
+  "sidebar": {
+    "language": "Idioma",
+    "switchToLight": "Mudar para o tema claro",
+    "switchToDark": "Mudar para o tema escuro",
+    "aboutTooltip": "Acerca do Soplos Layout Switcher"
+  },
+  "about": {
+    "version": "Versão {version}",
+    "tagline": "Alterna a área de trabalho do GNOME Shell entre layouts predefinidos.",
+    "copyright": "Copyright © 2026 Sergi Perich",
+    "license": "Licença GPL-3.0-or-later",
+    "website": "soplos.org"
+  },
+  "environment": {
+    "gnome": "GNOME Shell",
+    "unknown": "Desconhecido",
+    "x11": "X11",
+    "wayland": "Wayland"
+  },
+  "tabs": {
+    "layout": "Layout",
+    "settings": "Configurações"
+  },
+  "layouts": {
+    "soplos": "Soplos",
+    "dock": "Dock",
+    "tiling": "Mosaico",
+    "gnome": "GNOME",
+    "apply": "Aplicar",
+    "reload": "Recarregar área de trabalho",
+    "save": "Guardar o layout atual",
+    "saveTitle": "Guardar o layout atual",
+    "saveBody": "Guarda as extensões que estão ativas agora, as suas definições e os botões das janelas, como um layout teu que podes aplicar outra vez.",
+    "nameLabel": "Nome",
+    "delete": "Eliminar",
+    "deleteTitle": "Eliminar layout",
+    "deleteBody": "Eliminar o layout {name}? Não se pode desfazer.",
+    "replace": "Substituir",
+    "replaceTitle": "Substituir layout",
+    "replaceBody": "Já existe um layout chamado {name}. Substituí-lo pela área de trabalho como está agora?"
+  },
+  "settings": {
+    "tray": "Bandeja do sistema",
+    "desktopIcons": "Ícones da área de trabalho",
+    "open": "Abrir",
+    "tweaks": "GNOME Tweaks",
+    "refine": "Refine",
+    "extensions": "Extensões do GNOME",
+    "gdm": "Configurações do GDM",
+    "accent": "Cores de destaque",
+    "firefox": "Tema do Firefox"
+  },
+  "steps": {
+    "ensuring": "A verificar as extensões de que o layout precisa.",
+    "installingPackages": "A instalar os pacotes: {arg}.",
+    "installing": "A instalar {arg}.",
+    "packagesFailed": "Não foi possível instalar os pacotes.",
+    "installedBundled": "Extensão {arg} instalada a partir da que vem com o programa.",
+    "downloaded": "Extensão {arg} descarregada de extensions.gnome.org.",
+    "noBuild": "extensions.gnome.org não tem uma versão de {arg} para esta versão do shell.",
+    "manual": "Estas extensões têm de ser instaladas à mão: {arg}. O gestor de extensões está a abrir.",
+    "applying": "A aplicar o layout {arg}.",
+    "settingFailed": "Não foi possível alterar a definição {arg}.",
+    "disabled": "Extensão {arg} desativada.",
+    "enabled": "Extensão {arg} ativada.",
+    "enableFailed": "A extensão {arg} ainda não pôde ser ativada. Recarrega a área de trabalho para o shell a encontrar.",
+    "applied": "Layout {arg} aplicado.",
+    "saveFailed": "Não foi possível guardar o layout escolhido.",
+    "loggingOut": "A terminar a sessão para recarregar a área de trabalho.",
+    "restartingShell": "A reiniciar o GNOME Shell.",
+    "missing": "Falta o programa {arg}.",
+    "notInstalled": "A aplicação {arg} não está instalada.",
+    "installingFlatpak": "A instalar {arg} a partir do Flathub.",
+    "flatpakFailed": "Não foi possível instalar {arg}.",
+    "tooBig": "As definições das extensões são demasiado grandes para guardar."
+  },
+  "errors": {
+    "title": "Não foi possível concluir",
+    "apply": "Não foi possível aplicar o layout.",
+    "reload": "Não foi possível recarregar a área de trabalho.",
+    "tool": "Não foi possível abrir a ferramenta.",
+    "switch": "Não foi possível alterar a extensão.",
+    "save": "Não foi possível guardar o layout.",
+    "name": "O nome pode ter letras, dígitos, espaços e . , _ - até 40 carateres.",
+    "delete": "Não foi possível eliminar o layout."
+  },
+  "notices": {
+    "title": "Aviso",
+    "applied": "O layout {name} está aplicado. Se a área de trabalho ainda não estiver bem, usa Recarregar área de trabalho.",
+    "appliedNotes": "O layout {name} está aplicado, mas há coisas que requerem a tua atenção.",
+    "saved": "O layout {name} está guardado. Já está na lista."
+  }
+}

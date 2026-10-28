@@ -56,8 +56,6 @@ pub struct Layout {
 const DASH_TO_PANEL: &str = "org.gnome.shell.extensions.dash-to-panel";
 const ARCMENU: &str = "org.gnome.shell.extensions.arcmenu";
 const DASH_TO_DOCK: &str = "org.gnome.shell.extensions.dash-to-dock";
-const OPENBAR: &str = "/org/gnome/shell/extensions/openbar";
-const BLUR: &str = "/org/gnome/shell/extensions/blur-my-shell";
 const BUTTONS: (&str, &str, &str) = ("org.gnome.desktop.wm.preferences", "button-layout", ":minimize,maximize,close");
 
 const SOPLOS_SETTINGS: &[Setting] = &[
@@ -440,7 +438,6 @@ mod tests {
         }
         assert!(find("dock").unwrap().settings.iter().all(|s| s.tool == Tool::Gsettings));
         assert!(find("tiling").unwrap().settings.iter().any(|s| s.tool == Tool::Dconf));
-        let _ = (OPENBAR, BLUR);
     }
 
     #[test]

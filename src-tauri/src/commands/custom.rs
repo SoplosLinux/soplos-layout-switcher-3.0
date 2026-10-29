@@ -38,6 +38,35 @@ pub struct SavedLayout {
 pub struct CustomLayout {
     pub id: String,
     pub name: String,
+    pub preview: Preview,
+}
+
+/// A side of the screen, for the bars and the dock of a preview.
+#[derive(Serialize, Debug, PartialEq, Clone, Copy)]
+#[serde(rename_all = "lowercase")]
+pub enum Side {
+    Top,
+    Bottom,
+    Left,
+    Right,
+}
+
+/// The shape of a saved layout, for the picture the window draws of it in the
+/// style of the four layouts of the program. Read from the extensions that are
+/// on and their settings; an extension the program does not know is not drawn.
+#[derive(Serialize, Debug, PartialEq, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct Preview {
+    /// Dash to Panel, which takes the place of the top bar.
+    pub panel: Option<Side>,
+    pub dock: Option<Side>,
+    /// The dock runs along the whole side (`extend-height`).
+    pub dock_full: bool,
+    pub tiling: bool,
+    pub menu: bool,
+    /// Open Bar draws the top bar as islands.
+    pub islands: bool,
+    pub desktop_icons: bool,
 }
 
 // ---------------------------------------------------------------------------
@@ -106,6 +135,62 @@ pub fn parse_enabled_extensions(text: &str) -> Vec<String> {
         rest = &after[end + 1..];
     }
     found
+}
+
+const DASH_TO_PANEL: &str = "dash-to-panel@jderose9.github.com";
+const DASH_TO_DOCK: &str = "dash-to-dock@micxgx.gmail.com";
+const TILING: [&str; 4] = ["forge@jmmaranan.com", "pop-shell@system76.com", "material-shell@papyelgringo", "tilingshell@ferrarodomenico.com"];
+const MENU: &str = "arcmenu@arcmenu.com";
+const ISLANDS: &str = "openbar@neuromorph";
+const DESKTOP_ICONS: [&str; 2] = ["ding@rastersoft.com", "gtk4-ding@smedius.gitlab.com"];
+
+/// The value of a key in a section of what `dconf dump` prints, without the
+/// quotes of a string.
+fn dconf_value<'a>(dump: &'a str, section: &str, key: &str) -> Option<&'a str> {
+    let header = format!("[{section}]");
+    let mut inside = false;
+    for line in dump.lines() {
+        let line = line.trim();
+        if line.starts_with('[') {
+            inside = line == header;
+        } else if inside {
+            if let Some(value) = line.strip_prefix(key).and_then(|rest| rest.strip_prefix('=')) {
+                return Some(value.trim().trim_matches('\''));
+            }
+        }
+    }
+    None
+}
+
+/// The first side named in a value: `'LEFT'`, or the `{"monitor":"TOP"}` that
+/// newer Dash to Panel keeps for each monitor.
+fn side_in(value: &str) -> Option<Side> {
+    let upper = value.to_uppercase();
+    [("TOP", Side::Top), ("BOTTOM", Side::Bottom), ("LEFT", Side::Left), ("RIGHT", Side::Right)]
+        .into_iter()
+        .filter_map(|(word, side)| upper.find(word).map(|at| (at, side)))
+        .min_by_key(|(at, _)| *at)
+        .map(|(_, side)| side)
+}
+
+/// The shape of a saved layout. Both docks start at the bottom when their
+/// settings were never changed, as the extensions do.
+pub fn preview_of(layout: &SavedLayout) -> Preview {
+    let on = |uuid: &str| layout.extensions.iter().any(|enabled| enabled == uuid);
+    let dump = &layout.dconf;
+    let panel = on(DASH_TO_PANEL).then(|| {
+        dconf_value(dump, "dash-to-panel", "panel-positions").or_else(|| dconf_value(dump, "dash-to-panel", "panel-position")).and_then(side_in).unwrap_or(Side::Bottom)
+    });
+    let dock = on(DASH_TO_DOCK).then(|| dconf_value(dump, "dash-to-dock", "dock-position").and_then(side_in).unwrap_or(Side::Bottom));
+    Preview {
+        panel,
+        dock,
+        dock_full: dock.is_some() && dconf_value(dump, "dash-to-dock", "extend-height") == Some("true"),
+        tiling: TILING.iter().any(|uuid| on(uuid)),
+        menu: on(MENU),
+        islands: on(ISLANDS),
+        desktop_icons: DESKTOP_ICONS.iter().any(|uuid| on(uuid)),
+    }
 }
 
 /// The output of a program, as text; None when it fails.
@@ -209,7 +294,7 @@ fn list_in(dir: &Path) -> Vec<CustomLayout> {
         .filter_map(|entry| {
             let name = entry.file_name().to_string_lossy().into_owned();
             let id = name.strip_suffix(".json")?;
-            load_in(dir, id).map(|saved| CustomLayout { id: id.to_string(), name: saved.name })
+            load_in(dir, id).map(|saved| CustomLayout { id: id.to_string(), preview: preview_of(&saved), name: saved.name })
         })
         .collect();
     layouts.sort_by(|a, b| a.name.to_lowercase().cmp(&b.name.to_lowercase()));
@@ -335,7 +420,7 @@ mod tests {
         let id = save_in(&dir, &saved).unwrap();
         assert_eq!(id, id_of("My layout"));
         assert_eq!(load_in(&dir, &id), Some(saved.clone()));
-        assert_eq!(list_in(&dir), vec![CustomLayout { id: id.clone(), name: "My layout".to_string() }]);
+        assert_eq!(list_in(&dir), vec![CustomLayout { id: id.clone(), name: "My layout".to_string(), preview: preview_of(&saved) }]);
         // Saving it again replaces it.
         let mut again = saved.clone();
         again.extensions = vec!["ding@rastersoft.com".to_string()];
@@ -351,6 +436,30 @@ mod tests {
         assert_eq!(list_in(&dir).len(), 1);
         assert!(save_in(&dir, &layout("bad;name")).is_err());
         let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn the_preview_follows_the_extensions_and_their_settings() {
+        // The test layout: Dash to Dock with no position saved, and Forge.
+        let preview = preview_of(&layout("Dock and tiles"));
+        assert_eq!(preview, Preview { dock: Some(Side::Bottom), tiling: true, ..Preview::default() });
+
+        let mut saved = layout("Panel");
+        saved.extensions = vec![DASH_TO_PANEL.to_string(), MENU.to_string(), "ding@rastersoft.com".to_string()];
+        saved.dconf = "[dash-to-panel]\npanel-positions='{\"SDC-0x00000000\":\"TOP\"}'\n\n[dash-to-dock]\ndock-position='LEFT'\n".to_string();
+        // Dash to Dock is not on, so its settings do not draw a dock.
+        assert_eq!(preview_of(&saved), Preview { panel: Some(Side::Top), menu: true, desktop_icons: true, ..Preview::default() });
+
+        saved.extensions = vec![DASH_TO_DOCK.to_string(), ISLANDS.to_string()];
+        saved.dconf = "[dash-to-dock]\ndock-position='LEFT'\nextend-height=true\n\n[other]\ndock-position='RIGHT'\n".to_string();
+        assert_eq!(preview_of(&saved), Preview { dock: Some(Side::Left), dock_full: true, islands: true, ..Preview::default() });
+
+        // The older Dash to Panel key, and nothing known at all.
+        saved.extensions = vec![DASH_TO_PANEL.to_string()];
+        saved.dconf = "[dash-to-panel]\npanel-position='RIGHT'\n".to_string();
+        assert_eq!(preview_of(&saved).panel, Some(Side::Right));
+        saved.extensions = vec!["unknown@example.com".to_string()];
+        assert_eq!(preview_of(&saved), Preview::default());
     }
 
     #[test]

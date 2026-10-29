@@ -19,10 +19,26 @@ export const DEFAULT_LAYOUT: LayoutId = "soplos";
 
 export const isBuiltIn = (id: string | null | undefined): id is LayoutId => !!id && (LAYOUTS as string[]).includes(id);
 
+export type Side = "top" | "bottom" | "left" | "right";
+
+/** The shape of a saved layout, read from its extensions and their settings. */
+export interface LayoutPreviewShape {
+  /** Dash to Panel, in the place of the top bar. */
+  panel: Side | null;
+  dock: Side | null;
+  dockFull: boolean;
+  tiling: boolean;
+  menu: boolean;
+  /** Open Bar: the top bar as islands. */
+  islands: boolean;
+  desktopIcons: boolean;
+}
+
 /** A layout the user saved: the program names it, the user chose its name. */
 export interface CustomLayout {
   id: string;
   name: string;
+  preview: LayoutPreviewShape;
 }
 
 // What a name of a layout can hold, as the program checks it: short and plain.

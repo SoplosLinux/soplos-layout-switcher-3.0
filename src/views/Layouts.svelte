@@ -2,12 +2,13 @@
   import { onMount } from "svelte";
   import { get } from "svelte/store";
   import { _ } from "svelte-i18n";
-  import { Check, RefreshCw, Save, Trash2, LayoutDashboard } from "lucide-svelte";
+  import { Check, RefreshCw, Save, Trash2 } from "lucide-svelte";
   import { api } from "../lib/api";
   import { askConfirm, showError, showInfo } from "../lib/dialogs";
   import { busy, describeOutput, hasStep, runJob } from "../lib/jobs";
   import { DEFAULT_LAYOUT, LAYOUTS, isBuiltIn, type CustomLayout } from "../lib/layouts";
   import SaveLayoutDialog from "../components/SaveLayoutDialog.svelte";
+  import LayoutPreview from "../components/LayoutPreview.svelte";
 
   // The first page of the 2.x program: the four layouts with a picture each,
   // one of them chosen, and the buttons to apply it and to reload the desktop.
@@ -103,15 +104,19 @@
   const primaryButton = "flex items-center gap-2 px-5 py-2.5 rounded bg-primary hover:bg-primary-hover text-black text-[0.84rem] font-semibold disabled:opacity-50 disabled:pointer-events-none";
   const secondaryButton =
     "flex items-center gap-2 px-5 py-2.5 rounded border border-border bg-surface-2 text-text-bright hover:border-primary text-[0.84rem] font-semibold disabled:opacity-50 disabled:pointer-events-none";
-  // The four layouts in two rows of two, as in the 2.x window. With the window
-  // opening at 700 x 700 they fit without the scroll bar: each picture
-  // (200 x 150) is shown at about 195 wide. The layouts the user saves go on
-  // after them, so the page scrolls only when there are many.
+  // The layouts in columns of 180 to 220 wide, as many as the window holds and
+  // centred. auto-fill counts the columns at their widest, 220, so the window
+  // as it opens (700 wide) keeps the two rows of two of the 2.x program, and a
+  // third column comes from about 720 wide, more when a tiling shell gives the
+  // window the whole screen, instead of two columns lost in the middle. The
+  // pictures are 200 x 150, so they keep about their size. The layouts the
+  // user saves go on after the four, so the page scrolls only when there are
+  // many.
   const cardClass = (on: boolean) => `group flex flex-col gap-1.5 rounded-lg border p-2 text-left transition-all bg-panel ${on ? "border-primary ring-2 ring-primary/50 shadow-lg" : "border-border hover:border-primary/60"}`;
 </script>
 
 <div class="flex flex-col gap-5">
-  <div class="grid grid-cols-2 gap-3 w-full max-w-[400px] mx-auto" role="radiogroup" aria-label={$_("tabs.layout")}>
+  <div class="grid w-full justify-center gap-3 grid-cols-[repeat(auto-fill,minmax(180px,220px))]" role="radiogroup" aria-label={$_("tabs.layout")}>
     {#each LAYOUTS as id (id)}
       <button role="radio" aria-checked={selected === id} class={cardClass(selected === id)} on:click={() => (selected = id)}>
         <span class="flex items-center gap-1.5 text-[0.78rem] font-semibold {selected === id ? 'text-primary' : 'text-text-bright'}">
@@ -154,8 +159,8 @@
             <Trash2 size={13} />
           </button>
         </span>
-        <div class="grid aspect-[4/3] w-full place-items-center rounded-md border border-border bg-surface-2 text-primary transition-opacity {selected === layout.id ? 'opacity-100' : 'opacity-70 group-hover:opacity-90'}">
-          <LayoutDashboard size={34} strokeWidth={1.4} />
+        <div class="w-full overflow-hidden rounded-md transition-opacity {selected === layout.id ? 'opacity-100' : 'opacity-70 group-hover:opacity-90'}">
+          <LayoutPreview shape={layout.preview} />
         </div>
       </div>
     {/each}

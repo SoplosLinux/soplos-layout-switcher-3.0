@@ -1,6 +1,6 @@
 [package]
 name = "soplos-layout-switcher"
-version = "3.0.0-alpha"
+version = "3.0.0-beta"
 description = "Soplos Layout Switcher"
 authors = ["Sergi Perich <info@soploslinux.com>"]
 license = "GPL-3.0-or-later"

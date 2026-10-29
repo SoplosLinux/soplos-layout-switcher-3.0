@@ -1,6 +1,6 @@
 # Soplos Layout Switcher 3.0
 
-![Version](https://img.shields.io/badge/version-3.0.0--alpha-blue)
+![Version](https://img.shields.io/badge/version-3.0.0--beta-blue)
 ![License](https://img.shields.io/badge/license-GPL--3.0--or--later-green)
 ![Platform](https://img.shields.io/badge/platform-Linux-lightgrey)
 ![Tauri](https://img.shields.io/badge/Tauri-2-orange)
@@ -19,7 +19,7 @@ Ported from [gnome-layout-switcher](https://gitlab.manjaro.org/Chrysostomus/gnom
 
 ## Status
 
-This is the first alpha of the rewrite. The four layouts, the Settings page and the command line are those of the 2.x program, written again in Rust and Svelte. It has not yet been tested on real hardware: report anything that fails.
+This is the first beta of the rewrite. The four layouts, the Settings page and the command line are those of the 2.x program, written again in Rust and Svelte, plus layouts of your own. It is being tested on real hardware: report anything that fails.
 
 ## Layouts
 

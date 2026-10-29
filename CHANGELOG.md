@@ -2,6 +2,18 @@
 
 All notable changes to Soplos Layout Switcher are documented in this file.
 
+## [3.0.0-beta] - 2026-10-29
+
+First beta, the version being tested on real hardware.
+
+### Added
+
+- A picture for each layout you save, drawn from what it keeps in the style of the pictures of the four layouts of the program, where it had a generic icon: the top bar or Dash to Panel on its side, Dash to Dock on its side or along all of it, the windows as tiles with Forge, Pop Shell, Material Shell or Tiling Shell, the ArcMenu button, Open Bar islands and the desktop icons. An extension the program does not know is not drawn.
+
+### Changed
+
+- The layouts are in columns of 180 to 220 wide, as many as the window holds, centred: two rows of two in the window as it opens, and more columns when it is made bigger or a tiling shell gives it the whole screen, where the two columns stayed lost in the middle.
+
 ## [3.0.0-alpha] - 2026-10-28
 
 Full rewrite of Soplos Layout Switcher, from Python 3 and GTK3 to Tauri 2 with a Rust backend and a Svelte frontend. See the Architecture section of the README. Not yet tested on real hardware.

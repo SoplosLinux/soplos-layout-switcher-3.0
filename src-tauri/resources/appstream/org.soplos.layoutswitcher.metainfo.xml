@@ -127,6 +127,11 @@
   </screenshots>
 
   <releases>
+    <release version="3.0.0-beta" date="2026-10-29">
+      <description>
+        <p>First beta. The layouts you save are drawn in the style of the four of the program, from the extensions and settings they keep, and the layouts fill the width of the window: two rows of two as it opens, more columns when it is made bigger.</p>
+      </description>
+    </release>
     <release version="3.0.0-alpha" date="2026-10-28">
       <description>
         <p>First alpha of the rewrite of Soplos Layout Switcher, from Python 3 and GTK3 to Tauri 2 with a Rust backend and a Svelte frontend. The four layouts, the Settings page and the command line are those of the 2.x program. It has not yet been tested on real hardware.</p>

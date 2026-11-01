@@ -2,6 +2,18 @@
 
 All notable changes to Soplos Layout Switcher are documented in this file.
 
+## [3.0.0-2-beta] - 2026-10-31
+
+### Changed
+
+- The Settings page is no longer a tab beside the layouts. A gear at the bottom right of the banner opens it as a sidebar at the left of the layouts: the window grows to make room for it, in a few short steps, and gives it back when the sidebar is closed with its button, the Escape key or the gear. The window is only resized, never moved. A maximized window is not resized: the sidebar takes room from the layouts. Its switches and tools are in one column.
+- The window is shorter, 664 pixels, now that the tabs are gone, and the buttons under the layouts are smaller.
+- The arrow of the language selector no longer covers the name of the language.
+
+### Fixed
+
+- Reload Desktop decides between closing the session and restarting the shell from the type of the session, as the program already read it. It looked for a running Xwayland before, which GNOME starts only when an application asks for it, so a Wayland session without one was taken for an X11 one and the button failed. When the shell does not accept the restart through D-Bus, which GNOME refuses since version 41, the shell of the user is asked to restart with a signal.
+
 ## [3.0.0-1-beta] - 2026-10-29
 
 ### Changed

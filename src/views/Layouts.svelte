@@ -5,8 +5,7 @@
   import { Check, RefreshCw, Save, Trash2 } from "lucide-svelte";
   import { api } from "../lib/api";
   import { askConfirm, showError, showInfo } from "../lib/dialogs";
-  import { busy, describeOutput, hasStep, runJob } from "../lib/jobs";
-  import { DEFAULT_LAYOUT, LAYOUTS, isBuiltIn, type CustomLayout } from "../lib/layouts";
+  import { busy, describeOutput, hasStep, runJob } from "../lib/jobs";  import { DEFAULT_LAYOUT, LAYOUTS, isBuiltIn, type CustomLayout } from "../lib/layouts";
   import SaveLayoutDialog from "../components/SaveLayoutDialog.svelte";
   import LayoutPreview from "../components/LayoutPreview.svelte";
 
@@ -101,9 +100,9 @@
     if (!worked) await showError(t("errors.title"), t("errors.delete"));
   }
 
-  const primaryButton = "flex items-center gap-2 px-5 py-2.5 rounded bg-primary hover:bg-primary-hover text-black text-[0.84rem] font-semibold disabled:opacity-50 disabled:pointer-events-none";
+  const primaryButton = "flex items-center gap-1.5 px-4 py-1.5 rounded bg-primary hover:bg-primary-hover text-black text-[0.8rem] font-semibold disabled:opacity-50 disabled:pointer-events-none";
   const secondaryButton =
-    "flex items-center gap-2 px-5 py-2.5 rounded border border-border bg-surface-2 text-text-bright hover:border-primary text-[0.84rem] font-semibold disabled:opacity-50 disabled:pointer-events-none";
+    "flex items-center gap-1.5 px-4 py-1.5 rounded border border-border bg-surface-2 text-text-bright hover:border-primary text-[0.8rem] font-semibold disabled:opacity-50 disabled:pointer-events-none";
   // The layouts in columns of 180 to 220 wide, as many as the window holds and
   // centred. auto-fill counts the columns at their widest, 220, so the window
   // as it opens (700 wide) keeps the two rows of two of the 2.x program, and a
@@ -168,13 +167,13 @@
 
   <div class="flex flex-wrap items-center justify-center gap-3">
     <button class={secondaryButton} disabled={$busy} on:click={reload}>
-      <RefreshCw size={15} />{$_("layouts.reload")}
+      <RefreshCw size={14} />{$_("layouts.reload")}
     </button>
     <button class={secondaryButton} disabled={$busy} on:click={() => (saving = true)}>
-      <Save size={15} />{$_("layouts.save")}
+      <Save size={14} />{$_("layouts.save")}
     </button>
     <button class={primaryButton} disabled={$busy} on:click={apply}>
-      <Check size={15} />{$_("layouts.apply")}
+      <Check size={14} />{$_("layouts.apply")}
     </button>
   </div>
 </div>

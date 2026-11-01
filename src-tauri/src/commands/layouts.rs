@@ -14,7 +14,7 @@ use std::process::{Command, Stdio};
 use std::time::Duration;
 
 use super::custom;
-use super::environment::find_tool;
+use super::environment::{current_protocol, find_tool};
 use super::extensions;
 use super::jobs::{failed_job, start_task};
 use super::report::Report;
@@ -332,8 +332,10 @@ pub fn apply(id: &str, report: &dyn Report) -> bool {
 /// Reloads the desktop: a Wayland session cannot restart the shell, so the
 /// session is closed; an X11 one restarts it.
 pub fn reload(report: &dyn Report) -> bool {
-    let wayland = Command::new("pgrep").arg("Xwayland").stdin(Stdio::null()).stdout(Stdio::null()).stderr(Stdio::null()).status().map(|s| s.success()).unwrap_or(false);
-    if wayland {
+    // The protocol is the one of the session. The 2.x program looked for a
+    // running Xwayland, but GNOME starts it only when an application asks for
+    // it, so a Wayland session without any looked like X11.
+    if current_protocol() == "wayland" {
         let Some(quit) = find_tool("gnome-session-quit") else {
             report.step("missing gnome-session-quit");
             return false;
@@ -341,12 +343,22 @@ pub fn reload(report: &dyn Report) -> bool {
         report.step("loggingOut");
         return run_quiet(&quit, &["--logout"]);
     }
-    let Some(busctl) = find_tool("busctl") else {
-        report.step("missing busctl");
+    report.step("restartingShell");
+    // Through the shell itself, as the 2.x program did. Since GNOME 41 the shell
+    // refuses `Eval` unless it runs in unsafe mode, so when that fails the shell
+    // is asked to restart with the signal it handles for that, sent to the
+    // shell of this user only.
+    if let Some(busctl) = find_tool("busctl") {
+        if run_quiet(&busctl, &["--user", "call", "org.gnome.Shell", "/org/gnome/Shell", "org.gnome.Shell", "Eval", "s", "Meta.restart(\"Restarting GNOME...\")"]) {
+            return true;
+        }
+    }
+    let Some(pkill) = find_tool("pkill") else {
+        report.step("missing pkill");
         return false;
     };
-    report.step("restartingShell");
-    run_quiet(&busctl, &["--user", "call", "org.gnome.Shell", "/org/gnome/Shell", "org.gnome.Shell", "Eval", "s", "Meta.restart(\"Restarting GNOME...\")"])
+    let uid = std::fs::metadata("/proc/self").map(|meta| std::os::unix::fs::MetadataExt::uid(&meta)).unwrap_or(0).to_string();
+    run_quiet(&pkill, &["-QUIT", "-x", "-U", &uid, "gnome-shell"])
 }
 
 /// The layout the user chose last, if any.

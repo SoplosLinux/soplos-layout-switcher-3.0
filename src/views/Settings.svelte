@@ -4,8 +4,7 @@
   import { _ } from "svelte-i18n";
   import { api } from "../lib/api";
   import { showError } from "../lib/dialogs";
-  import { busy, describeOutput, runJob } from "../lib/jobs";
-  import { TOOLS, type Switches, type ToolId } from "../lib/layouts";
+  import { busy, describeOutput, runJob } from "../lib/jobs";  import { TOOLS, type Switches, type ToolId } from "../lib/layouts";
 
   // The second page of the 2.x program: the two switches (the system tray and
   // the desktop icons, which are GNOME Shell extensions) and the buttons that
@@ -60,7 +59,7 @@
     "px-4 py-1.5 rounded border border-border bg-surface-2 text-text-bright hover:border-primary text-[0.8rem] font-semibold disabled:opacity-50 disabled:pointer-events-none";
 </script>
 
-<div class="grid grid-cols-1 gap-3 max-w-[600px] w-full mx-auto sm:grid-cols-2">
+<div class="grid grid-cols-1 gap-3 w-full">
   {#each SWITCHES as item (item.kind)}
     <div class={row}>
       <span class="text-[0.85rem] text-text-bright">{$_(item.label)}</span>

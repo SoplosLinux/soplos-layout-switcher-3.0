@@ -29,6 +29,11 @@ fn desktop_from(xdg_current_desktop: &str, gnome_session: bool) -> &'static str 
     }
 }
 
+/// The display protocol of this session: "wayland", "x11" or "unknown".
+pub fn current_protocol() -> &'static str {
+    protocol_from(&std::env::var("XDG_SESSION_TYPE").unwrap_or_default(), std::env::var_os("WAYLAND_DISPLAY").is_some(), std::env::var_os("DISPLAY").is_some())
+}
+
 fn protocol_from(session_type: &str, wayland_display: bool, x_display: bool) -> &'static str {
     let session = session_type.to_lowercase();
     if session == "wayland" || wayland_display {
@@ -55,12 +60,7 @@ pub fn shell_version() -> String {
 pub async fn get_environment_info() -> EnvironmentInfo {
     tauri::async_runtime::spawn_blocking(|| EnvironmentInfo {
         desktop_environment: desktop_from(&std::env::var("XDG_CURRENT_DESKTOP").unwrap_or_default(), std::env::var_os("GNOME_DESKTOP_SESSION_ID").is_some()).to_string(),
-        display_protocol: protocol_from(
-            &std::env::var("XDG_SESSION_TYPE").unwrap_or_default(),
-            std::env::var_os("WAYLAND_DISPLAY").is_some(),
-            std::env::var_os("DISPLAY").is_some(),
-        )
-        .to_string(),
+        display_protocol: current_protocol().to_string(),
         shell_version: shell_version(),
     })
     .await

@@ -1,4 +1,4 @@
-.TH "SOPLOS-LAYOUT-SWITCHER" "1" "2026-10-25" "Soplos Linux" "User Commands"
+.TH "SOPLOS-LAYOUT-SWITCHER" "1" "2026-11-04" "Soplos Linux" "User Commands"
 .SH NAME
 soplos-layout-switcher \- GNOME Shell layout presets for Soplos Linux
 .SH SYNOPSIS
@@ -13,9 +13,12 @@ Tiling and GNOME, by turning on the shell extensions each one needs, turning
 off those of the other layouts and applying the matching settings. Built with
 Tauri 2, Rust and Svelte, it only runs under GNOME Shell, with X11 or Wayland.
 .P
-It has two pages. Layout shows the four layouts with a picture each, and has
-the buttons to apply the chosen one and to reload the desktop. Settings has a
-switch for the system tray and one for the desktop icons, and buttons that open
+Its window shows the four layouts with a picture each, and has the buttons to
+apply the chosen one and to reload the desktop. A gear at the bottom right of
+the banner opens the settings as a sidebar at the left of the layouts, which
+makes the window wider and gives that room back when it is closed. The
+settings have a switch for the system tray and one for the desktop icons, and
+buttons that open
 GNOME Tweaks, Refine (an alternative to it), the extensions manager, GNOME
 Settings (for the accent color), GDM Settings and Add Water, which themes
 Firefox. Refine and Add Water are Flatpaks, installed for the user the first
@@ -53,6 +56,9 @@ Reload the desktop: restart the shell on X11, close the session on Wayland.
 .TP
 .B F1
 About dialog.
+.TP
+.B Escape
+Close the settings sidebar.
 .TP
 .B Ctrl+Q
 Quit the application.

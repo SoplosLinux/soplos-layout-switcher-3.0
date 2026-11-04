@@ -73,7 +73,7 @@
     <keyword xml:lang="es">escritorio</keyword>
   </keywords>
 
-  <launchable type="desktop-id">org.soplos.layoutswitcher.desktop</launchable>
+  <launchable type="desktop-id">soplos-layout-switcher.desktop</launchable>
 
   <provides>
     <binary>soplos-layout-switcher</binary>
@@ -127,6 +127,11 @@
   </screenshots>
 
   <releases>
+    <release version="3.0.0-3-beta" date="2026-11-04">
+      <description>
+        <p>New screenshots, installed with the package, a revised manual page and application metadata that points to the installed launcher.</p>
+      </description>
+    </release>
     <release version="3.0.0-2-beta" date="2026-10-31">
       <description>
         <p>The Settings page is now a sidebar that opens at the left of the layouts from a gear in the banner, and the window is shorter. Reload Desktop works on a Wayland session where no application uses Xwayland, and the arrow of the language selector no longer covers the language.</p>

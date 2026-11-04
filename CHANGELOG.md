@@ -2,6 +2,18 @@
 
 All notable changes to Soplos Layout Switcher are documented in this file.
 
+## [3.0.0-3-beta] - 2026-11-04
+
+### Changed
+
+- New screenshots of the layouts and of the settings sidebar, taken with the new window.
+- The manual page describes the settings sidebar opened with the gear, and the Escape key that closes it.
+
+### Fixed
+
+- The screenshots are now installed with the package, so the software centers can show them.
+- The application metadata points to the launcher that the package installs, `soplos-layout-switcher.desktop`, so the software centers link the entry of the menu with the program.
+
 ## [3.0.0-2-beta] - 2026-10-31
 
 ### Changed

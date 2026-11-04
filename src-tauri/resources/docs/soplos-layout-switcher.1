@@ -1,0 +1,94 @@
+.TH "SOPLOS-LAYOUT-SWITCHER" "1" "2026-11-04" "Soplos Linux" "User Commands"
+.SH NAME
+soplos-layout-switcher \- GNOME Shell layout presets for Soplos Linux
+.SH SYNOPSIS
+.B soplos-layout-switcher
+.br
+.B soplos-layout-switcher-cli
+.I COMMAND
+.SH DESCRIPTION
+.B soplos-layout-switcher
+switches the GNOME Shell desktop between four predefined layouts, Soplos, Dock,
+Tiling and GNOME, by turning on the shell extensions each one needs, turning
+off those of the other layouts and applying the matching settings. Built with
+Tauri 2, Rust and Svelte, it only runs under GNOME Shell, with X11 or Wayland.
+.P
+Its window shows the four layouts with a picture each, and has the buttons to
+apply the chosen one and to reload the desktop. A gear at the bottom right of
+the banner opens the settings as a sidebar at the left of the layouts, which
+makes the window wider and gives that room back when it is closed. The
+settings have a switch for the system tray and one for the desktop icons, and
+buttons that open
+GNOME Tweaks, Refine (an alternative to it), the extensions manager, GNOME
+Settings (for the accent color), GDM Settings and Add Water, which themes
+Firefox. Refine and Add Water are Flatpaks, installed for the user the first
+time.
+.P
+The button Save current layout keeps the desktop as it is, with a name: the
+extensions that are on, their settings and the window buttons. The layouts
+saved are shown after the four, can be applied and deleted, and are also
+accepted by the command line.
+.P
+Before a layout is applied, the extensions it needs are installed if they are
+missing: from their Debian package, which is installed as administrator with
+.BR pkexec (1)
+and asks for the password once; from the extensions that ship with the program
+(Forge and Open Bar, which have no package); or from extensions.gnome.org.
+Whatever cannot be installed is left to the user in the extensions manager.
+.P
+Five extensions are taken as the user's own taste and are never touched:
+Coverflow Alt-Tab, Clipboard Indicator, Desktop Cube, Removable Drive Menu and
+User Themes.
+.P
+The interface is available in English, Spanish, German, French, Italian,
+Portuguese, Romanian and Russian. It starts in the system language and falls
+back to English.
+.SH COMMAND LINE
+.B soplos-layout-switcher-cli
+does the same without a window, for scripts and installers:
+.TP
+.B apply-soplos, apply-dock, apply-gnome, apply-tiling
+Apply the layout.
+.TP
+.B reload-gnome-shell
+Reload the desktop: restart the shell on X11, close the session on Wayland.
+.SH KEYBOARD SHORTCUTS
+.TP
+.B F1
+About dialog.
+.TP
+.B Escape
+Close the settings sidebar.
+.TP
+.B Ctrl+Q
+Quit the application.
+.SH FILES
+.TP
+.I ~/.config/soplos-layout-switcher.conf
+Keeps the layout applied last, under [SETTING].
+.TP
+.I ~/.config/soplos-layout-switcher/layouts/
+The layouts saved by the user, one JSON file each.
+.TP
+.I /usr/share/soplos-layout-switcher/extensions/
+Extensions that ship with the program.
+.TP
+.I ~/.local/share/gnome-shell/extensions/
+Where the extensions are installed for the user.
+.TP
+.I /usr/share/polkit-1/actions/org.soplos.layoutswitcher.policy
+Polkit policy for the installation of the packages of the extensions.
+.SH AUTHOR
+Written by Sergi Perich <info@soploslinux.com> for the Soplos Linux project.
+.SH COPYRIGHT
+Copyright \(co 2026 Sergi Perich <info@soploslinux.com>.
+.br
+License: GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0.html>.
+.br
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+.SH SEE ALSO
+.BR gnome-extensions (1),
+.BR gsettings (1),
+.BR dconf (1),
+.BR soplos-grub-editor (1)
